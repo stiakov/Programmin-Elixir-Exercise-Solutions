@@ -40,7 +40,7 @@ defmodule ElixirFunSolutionsTest do
       assert ElixirFunSolutions.fizzbuzz_case({0, 0, 1}) == "FizzBuzz"
       assert ElixirFunSolutions.fizzbuzz_case({0, 1, 1}) == "Fizz"
       assert ElixirFunSolutions.fizzbuzz_case({1, 0, 1}) == "Buzz"
-      assert ElixirFunSolutions.fizzbuzz_case({1, 1, 42}) == "Whistle"
+      assert ElixirFunSolutions.fizzbuzz_case({1, 1, 42}) == 42
     end
 
   test "FizzBuzz anonymous function" do
@@ -70,7 +70,10 @@ defmodule ElixirFunSolutionsTest do
     assert 10..16 |> Enum.to_list |> Enum.map(fn(n) -> fz2.(n) end) == ["Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16]
   end
 
-
+  # ==== ➤ EXERCISE: Functions-4 (Pag. 47) ====
+  test "Testing prefix with nested function" do
+    assert ElixirFunSolutions.named_prefix("Hola").("niño!") == "Hola niño!"
+  end
 
 
 end
