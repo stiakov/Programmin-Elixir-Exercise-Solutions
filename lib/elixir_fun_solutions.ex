@@ -25,7 +25,7 @@ defmodule ElixirFunSolutions do
 
   # ==== EXERCISE: Functions-2 (Pag. 45) ====
 
-    def fizzbuxx(a, b, c) do
+    def fizzbuzz_cond(a, b, c) do
       cond do
         a == 0 && b == 0 -> "FizzBuzz"
         a == 0 -> "Fizz"
@@ -34,12 +34,26 @@ defmodule ElixirFunSolutions do
       end
     end
 
-  fizzbuzz = fn
-    0, 0, _c -> "FizzBuzz"
-    0, _, _c -> "Fizz"
-    _, 0, _c -> "Buzz"
-    _, _, c -> c
-  end
+    def fizzbuzz_case(patt) do
+      case patt do
+        {0, 0, _} -> "FizzBuzz"
+        {0, _, _} -> "Fizz"
+        {_, 0, _} -> "Buzz"
+        {_, _, c} when c != 0 -> c
+      end
+    end
 
-  fz2 = fn n -> fizzbuzz.(rem(n, 3), rem(n, 5), n) end
+    def fizzbuzz_pattern(0, 0, _), do: "FizzBuzz"
+    def fizzbuzz_pattern(0, _, _), do: "Fizz"
+    def fizzbuzz_pattern(_, 0, _), do: "Buzz"
+    def fizzbuzz_pattern(_, _, _), do: "Whistle"
+
+  # fizzbuzz = fn
+  #   0, 0, _c -> "FizzBuzz"
+  #   0, _, _c -> "Fizz"
+  #   _, 0, _c -> "Buzz"
+  #   _, _, c -> c
+  # end
+
+  # fz2 = fn n -> fizzbuzz.(rem(n, 3), rem(n, 5), n) end
 end

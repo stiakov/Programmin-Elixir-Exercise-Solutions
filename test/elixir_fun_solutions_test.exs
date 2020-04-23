@@ -22,11 +22,25 @@ defmodule ElixirFunSolutionsTest do
   # ===== EXERCISE: Functions-2 (Pag. 45) ======
   #  @tag :skip
 
-    test "FizzBuzz named funcition" do
-      assert ElixirFunSolutions.fizzbuxx(0, 0, 1) == "FizzBuzz"
-      assert ElixirFunSolutions.fizzbuxx(0, 1, 1) == "Fizz"
-      assert ElixirFunSolutions.fizzbuxx(1, 0, 1) == "Buzz"
-      assert ElixirFunSolutions.fizzbuxx(1, 1, 42) == 42
+    test "FizzBuzz named function with condition" do
+      assert ElixirFunSolutions.fizzbuzz_cond(0, 0, 1) == "FizzBuzz"
+      assert ElixirFunSolutions.fizzbuzz_cond(0, 1, 1) == "Fizz"
+      assert ElixirFunSolutions.fizzbuzz_cond(1, 0, 1) == "Buzz"
+      assert ElixirFunSolutions.fizzbuzz_cond(1, 1, 42) == 42
+    end
+
+    test "FizzBuzz_Pattern named function with pattern matching" do
+      assert ElixirFunSolutions.fizzbuzz_pattern(0, 0, 1) == "FizzBuzz"
+      assert ElixirFunSolutions.fizzbuzz_pattern(0, 1, 1) == "Fizz"
+      assert ElixirFunSolutions.fizzbuzz_pattern(1, 0, 1) == "Buzz"
+      assert ElixirFunSolutions.fizzbuzz_pattern(1, 1, 42) == "Whistle"
+    end
+
+    test "FizzBuzz_case named function with pattern matching and case" do
+      assert ElixirFunSolutions.fizzbuzz_case({0, 0, 1}) == "FizzBuzz"
+      assert ElixirFunSolutions.fizzbuzz_case({0, 1, 1}) == "Fizz"
+      assert ElixirFunSolutions.fizzbuzz_case({1, 0, 1}) == "Buzz"
+      assert ElixirFunSolutions.fizzbuzz_case({1, 1, 42}) == "Whistle"
     end
 
   test "FizzBuzz anonymous function" do
