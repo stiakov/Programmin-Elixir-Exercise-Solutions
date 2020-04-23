@@ -22,8 +22,14 @@ defmodule ElixirFunSolutionsTest do
   # ===== EXERCISE: Functions-2 (Pag. 45) ======
   #  @tag :skip
 
+    test "FizzBuzz named funcition" do
+      assert ElixirFunSolutions.fizzbuxx(0, 0, 1) == "FizzBuzz"
+      assert ElixirFunSolutions.fizzbuxx(0, 1, 1) == "Fizz"
+      assert ElixirFunSolutions.fizzbuxx(1, 0, 1) == "Buzz"
+      assert ElixirFunSolutions.fizzbuxx(1, 1, 42) == 42
+    end
 
-  test "FizzBuzz" do
+  test "FizzBuzz anonymous function" do
     fizzbuzz = fn
       0, 0, _c -> "FizzBuzz"
       0, _, _c -> "Fizz"
@@ -37,7 +43,7 @@ defmodule ElixirFunSolutionsTest do
     assert fizzbuzz.(1,1,1) == 1
   end
 
-  test "fizzbuzz with rem()" do
+  test "fizzbuzz anonymous fn with rem()" do
     fizzbuzz = fn
       0, 0, _c -> "FizzBuzz"
       0, _, _c -> "Fizz"

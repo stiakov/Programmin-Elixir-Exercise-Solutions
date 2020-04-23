@@ -24,7 +24,16 @@ defmodule ElixirFunSolutions do
   # pair_tuple = &(Tuple.to_list(&1))
 
   # ==== EXERCISE: Functions-2 (Pag. 45) ====
-    
+
+    def fizzbuxx(a, b, c) do
+      cond do
+        a == 0 && b == 0 -> "FizzBuzz"
+        a == 0 -> "Fizz"
+        b == 0 -> "Buzz"
+        c -> c
+      end
+    end
+
   fizzbuzz = fn
     0, 0, _c -> "FizzBuzz"
     0, _, _c -> "Fizz"
