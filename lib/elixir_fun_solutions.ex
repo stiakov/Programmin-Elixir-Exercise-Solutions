@@ -64,4 +64,10 @@ defmodule ElixirFunSolutions do
   end
 
   # prefix = fn str -> (fn str2 -> "#{str} #{str2}" end) end
+
+
+  # ==== ➤ EXERCISE: Functions-5 (Pag. 50) ====
+
+  Enum.map [1, 2, 3, 4], &(&1 + 2)
+  Enum.map [1, 2, 3, 4], &(IO.inspect(&1))
 end

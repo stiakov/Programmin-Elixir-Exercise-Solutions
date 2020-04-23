@@ -71,9 +71,13 @@ defmodule ElixirFunSolutionsTest do
   end
 
   # ==== ➤ EXERCISE: Functions-4 (Pag. 47) ====
-  test "Testing prefix with nested function" do
-    assert ElixirFunSolutions.named_prefix("Hola").("niño!") == "Hola niño!"
-  end
+    test "Testing prefix with nested function" do
+      assert ElixirFunSolutions.named_prefix("Hola").("niño!") == "Hola niño!"
+    end
 
+  # ==== ➤ EXERCISE: Functions-5 (Pag. 50) ====
+    test "Testing & operator to write shortcutted functions" do
+      assert Enum.map [1, 2, 3, 4], &(&1 + 2) == [3, 4, 5, 6]
+    end
 
 end
