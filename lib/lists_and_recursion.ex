@@ -25,4 +25,15 @@ defmodule ListAndRecursion do
   def my_max([], max_value), do: max_value
   def my_max([head | tail], max_value) when head >= max_value, do: my_max(tail, head)
   def my_max([head | tail], max_value) when head <= max_value, do: my_max(tail, max_value)
+
+  # ===== ➤ EXERCISE: ListAndRecursion-3 (Pag. 77) ======
+  def caesar(list \\ [], plus \\ 0)
+  def caesar([], _plus), do: ''
+  def caesar([head | tail], plus) when head + plus > ?z do
+    [ head + plus | caesar(tail, plus)]
+  end
+  def caesar([head | tail], plus) when head + plus < ?z do
+    [ head | caesar(tail, plus)]
+  end
+  def caesar_decode(list), do: List.to_string list
 end
