@@ -27,13 +27,23 @@ defmodule ListAndRecursion do
   def my_max([head | tail], max_value) when head <= max_value, do: my_max(tail, max_value)
 
   # ===== ➤ EXERCISE: ListAndRecursion-3 (Pag. 77) ======
-  def caesar(list \\ [], plus \\ 13)
-  def caesar([], _plus), do: ''
-  def caesar([head | tail], plus) when head + plus > ?z do
-    [ head - plus | caesar(tail, plus)]
+  defmodule Caesar do
+    def decoder(list \\ [], plus \\ 13)
+      def decoder([], _plus), do: ''
+      def decoder([head | tail], plus) when head + plus > ?z do
+        [ head - plus | decoder(tail, plus)]
+      end
+      def decoder([head | tail], plus) when head + plus < ?z do
+        [ head + plus | decoder(tail, plus)]
+    end
+
+    def encoder(list \\ [], plus \\ 13)
+    def encoder([], _plus), do: ''
+    def encoder([head | tail], plus) when head + plus > ?z do
+      [ head + plus | encoder(tail, plus)]
+    end
+    def encoder([head | tail], plus) when head + plus < ?z do
+      [ head - plus | encoder(tail, plus)]
+    end
   end
-  def caesar([head | tail], plus) when head + plus < ?z do
-    [ head + plus | caesar(tail, plus)]
-  end
-  def caesar_decode(list), do: List.to_string list
 end
